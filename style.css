@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+}
+.carouselWrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.containerTop {
+    width: 100%;
+    height: 10vh;
+    background-color: rgb(51, 51, 51);
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 80vh;
+    position: absolute;
+    margin-top: 10vh;
+}
+
+.buttonLeft, .buttonRight {
+    width: 6vh;
+    display: flex;
+}
+
+.buttonLeft {
+    background-image: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,0.7));
+}
+
+.buttonRight {
+    background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.7));
+    justify-content: flex-end;
+    
+}
+.left, .right {
+    border: none;
+    font-size: 2rem;
+    background-color: transparent;
+    color: rgb(82, 82, 82);
+}
+
+.left:hover, .right:hover {
+    color: rgb(143, 140, 140);
+}
+
+.indexButtons {
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(51, 51, 51);
+}
+
+.indexDisplay {
+    height: 5vh;
+    width: 100%;
+    background-color: rgb(51, 51, 51);
+    display: flex;
+    justify-content: center;
+}
+
+.indexNumber {
+    color: rgb(165, 165, 165);
+    padding-top: 2vh;
+}
+
+.display {
+    width: 100%;
+    height: 80vh;
+}
+
+.index {
+    background-color: rgb(51, 51, 51);
+    border: none;
+    color: rgb(138, 138, 138);
+}
+
+.index:hover {
+    color: rgb(82, 82, 82);
+}
+
+.slider {
+    width: 100%;
+    height: 80vh;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.active {
+    color: rgb(82, 82, 82);
+}
+
+:focus {
+    outline: none;
+}

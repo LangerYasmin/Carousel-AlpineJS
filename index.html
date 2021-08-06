@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karussel</title>
+    <script src="https://kit.fontawesome.com/883034b0f6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+</head>
+<body>
+    <div class="carouselWrapper" x-data="{ slides: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], activeSlide: 1 }">
+        <div class="containerTop"></div>
+        <div class="buttons">
+            <div class="buttonLeft">
+                <button class="left" @click="activeSlide = activeSlide === 1 ? slides.length: activeSlide - 1"
+                @keydown.arrow-left.window="activeSlide = activeSlide === 1 ? slides.length: activeSlide - 1">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+            </div>
+            <div class="buttonRight" @click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1"
+            @keydown.arrow-right.window="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
+                <button class="right">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+        <div class="display">
+            <template x-for="slide in slides" :key="slide">
+                <div class="slider" x-show="activeSlide === slide"><img id="imageID" x-bind:src="`Images/${slide}.jpeg`"></div>
+            </template>
+        </div>
+        <template x-for="slide in slides" :key="slide">
+            <div class="indexDisplay" x-show="activeSlide === slide">
+                <span class="indexNumber" x-text="slide"></span>
+                <span class="indexNumber">/</span>
+                <span class="indexNumber" x-text="slides.length"></span>
+            </div>
+        </template>
+        <div class="indexButtons">
+            <template x-for="slide in slides" :key="slide">
+                <button @click="activeSlide = slide" :class="{ 'active': activeSlide === slide, 'inactive': activeSlide !== slide }" class="index">
+                    <i class="fas fa-circle"></i>
+                </button> 
+            </template>
+        </div>
+    </div>
+</body>
+</html>
